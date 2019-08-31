@@ -16,10 +16,10 @@ const App: React.FC = () => {
         </td>)}
       </tr>)}
     </table>
+    {ttt.checkDraw(field)?<h1>Draw</h1>:null}
     {ttt.checkWin(field)?<h1>Winner {ttt.activePlayer}</h1>:""}
-    {ttt.checkWin(field)?<button onClick={() => {
-      
-      ttt.reset()
+    {ttt.checkWin(field)||ttt.checkDraw(field)?<button onClick={() => {
+      setField(ttt.reset())
       }}>Reset</button>:""}
   </div>
   );
