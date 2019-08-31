@@ -211,4 +211,15 @@ describe("TicTacToe is a game", () => {
         ]
         expect(ttt.reset()).toEqual(field)
     })
+    it("should not change player after a winning move",()=>{
+        const ttt = new TicTacToe
+        ttt.activePlayer="X"
+        ttt.field = [
+            ["X", "O", "O"],
+            ["", "X", ""],
+            ["", "", ""]
+        ]
+        ttt.clickHandler(2,2)
+        expect(ttt.activePlayer).toBe("X")
+    })
 })
