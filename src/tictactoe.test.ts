@@ -39,5 +39,6 @@ describe("TicTacToe is a game", () => {
             ["X", "O", "X"]
         ]
         const isDraw = ttt.checkDraw(field)
+        expect(isDraw).toBe(true)
     })
 })
