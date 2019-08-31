@@ -51,4 +51,14 @@ describe("TicTacToe is a game", () => {
         const isDraw = ttt.checkDraw(field)
         expect(isDraw).toBe(false)
     })
+    it("should be able to detect a win",()=>{
+        const ttt = new TicTacToe
+        const field = [
+            ["X", "O", ""],
+            ["", "X", "O"],
+            ["", "O", "X"]
+        ]
+        const isWin = ttt.checkWin(field)
+        expect(isWin).toBe(true)
+    })
 })
