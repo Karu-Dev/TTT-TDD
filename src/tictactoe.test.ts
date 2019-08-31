@@ -126,13 +126,13 @@ describe("TicTacToe is a game", () => {
         const ttt = new TicTacToe
         ttt.activePlayer="O"
         ttt.field = [
-            ["X", "O", "O"],
+            ["X", "X", "O"],
             ["O", "X", "X"],
             ["X", "O", "X"]
         ]
         const field = [
             ["X", "X", "O"],
-            ["O", "O", "X"],
+            ["O", "X", "X"],
             ["X", "O", "X"]
         ]
         ttt.clickHandler(1,1)
