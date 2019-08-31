@@ -197,4 +197,18 @@ describe("TicTacToe is a game", () => {
         console.log(ttt.field)
         expect(ttt.field).toEqual(expected)
     })
+    it("reset function should return an empty field",()=>{
+        const ttt = new TicTacToe
+        const field = [
+            ["", "", ""],
+            ["", "", ""],
+            ["", "", ""]
+        ]
+        ttt.field = [
+            ["", "", ""],
+            ["", "X", ""],
+            ["", "", ""]
+        ]
+        expect(ttt.reset()).toEqual(field)
+    })
 })
