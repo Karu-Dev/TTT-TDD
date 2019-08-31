@@ -22,15 +22,29 @@ export class TicTacToe {
         this.activePlayer = "X"
         return
     }
-    checkDraw(field:string[][]):boolean{
-        if(field.some(row=>{
-            return row.some(cell=>{
+    checkDraw(field: string[][]): boolean {
+        if (field.some(row => {
+            return row.some(cell => {
                 return cell === ""
             })
-        })){
+        })) {
             return false
-        }else{
+        } else {
             return true
         }
+    }
+    checkWin(field: string[][]): boolean {
+        //horizontal
+        if (field[0][0] !== "" && field[0][0] === field[0][1] && field[0][0] === field[0][2]) { return true }
+        if (field[1][0] !== "" && field[1][0] === field[1][1] && field[1][0] === field[1][2]) { return true }
+        if (field[2][0] !== "" && field[2][0] === field[2][1] && field[2][0] === field[2][2]) { return true }
+        //vertical
+        if (field[0][0] !== "" && field[0][0] === field[1][0] && field[0][0] === field[2][0]) { return true }
+        if (field[0][1] !== "" && field[0][1] === field[1][1] && field[0][1] === field[2][1]) { return true }
+        if (field[0][2] !== "" && field[0][2] === field[1][2] && field[0][2] === field[2][2]) { return true }
+        //diagonal
+        if (field[1][1] !== "" && field[0][0] === field[1][1] && field[0][0] === field[2][2]) { return true }
+        if (field[1][1] !== "" && field[0][2] === field[1][1] && field[0][2] === field[2][0]) { return true }
+        return false
     }
 }
