@@ -179,4 +179,22 @@ describe("TicTacToe is a game", () => {
         ttt.setField(field)
         expect(ttt.field).toEqual(field)
     })
+    it("shouldn't be able to make a move in a taken cell",()=>{
+        const ttt = new TicTacToe
+        const field = [
+            ["", "", ""],
+            ["", "X", ""],
+            ["", "", ""]
+        ]
+        const expected = [
+            ["", "", ""],
+            ["", "X", ""],
+            ["", "", ""]
+        ]
+        ttt.setField(field)
+        ttt.activePlayer="O"
+        ttt.clickHandler(1,1)
+        console.log(ttt.field)
+        expect(ttt.field).toEqual(expected)
+    })
 })
