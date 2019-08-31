@@ -47,4 +47,8 @@ export class TicTacToe {
         if (field[1][1] !== "" && field[0][2] === field[1][1] && field[0][2] === field[2][0]) { return true }
         return false
     }
+    reset(){
+        this.field = this.genField()
+        this.activePlayer = "X"
+    }
 }
