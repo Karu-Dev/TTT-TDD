@@ -18,9 +18,9 @@ const App: React.FC = () => {
     </table>
     {ttt.checkDraw(field)?<h1>Draw</h1>:null}
     {ttt.checkWin(field)?<h1>Winner {ttt.activePlayer}</h1>:""}
-    {ttt.checkWin(field)||ttt.checkDraw(field)?<button onClick={() => {
+    <button onClick={() => {
       setField(ttt.reset())
-      }}>Reset</button>:""}
+      }}>Reset</button>
   </div>
   );
 }
