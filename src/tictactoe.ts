@@ -22,10 +22,10 @@ export class TicTacToe {
             this.field[y][x] = this.activePlayer
             if (this.activePlayer === "X") {
                 this.activePlayer = "O"
-                return
+                return this.field
             }
             this.activePlayer = "X"
-            return
+            return this.field
         }
     }
     checkDraw(field: string[][]): boolean {
