@@ -16,17 +16,19 @@ export class TicTacToe {
             ["", "", ""]
         ]
     }
-    clickHandler(x: number, y: number) {
+    clickHandler(x: number, y: number,):string[][] {
         if(!this.checkDraw(this.field)&&!this.checkWin(this.field)){
-
-            this.field[y][x] = this.activePlayer
-            if (this.activePlayer === "X") {
-                this.activePlayer = "O"
-                return this.field
+            if(this.field[y][x]===""){
+                this.field[y][x] = this.activePlayer
+                if (this.activePlayer === "X") {
+                    this.activePlayer = "O"
+                    return [...this.field]
+                }
+                this.activePlayer = "X"
+                return [...this.field]
             }
-            this.activePlayer = "X"
-            return this.field
         }
+        return [...this.field]
     }
     checkDraw(field: string[][]): boolean {
         if (field.some(row => {
@@ -56,5 +58,8 @@ export class TicTacToe {
     reset(){
         this.field = this.genField()
         this.activePlayer = "X"
+    }
+    setField(field:string[][]){
+        this.field = field
     }
 }
