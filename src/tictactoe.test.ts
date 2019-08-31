@@ -41,4 +41,14 @@ describe("TicTacToe is a game", () => {
         const isDraw = ttt.checkDraw(field)
         expect(isDraw).toBe(true)
     })
+    it("should be able to detect a non draw too",()=>{
+        const ttt = new TicTacToe
+        const field = [
+            ["", "", ""],
+            ["", "", "X"],
+            ["", "", ""]
+        ]
+        const isDraw = ttt.checkDraw(field)
+        expect(isDraw).toBe(false)
+    })
 })
