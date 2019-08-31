@@ -86,4 +86,15 @@ describe("TicTacToe is a game", () => {
         isWin = ttt.checkWin(field)
         expect(isWin).toBe(false)
     })
+    it("should be able to reset the game",()=>{
+        const ttt = new TicTacToe
+        ttt.field = [
+            ["O", "X", "X"],
+            ["", "", "O"],
+            ["X", "", "X"]
+        ]
+        ttt.reset()
+        expect(ttt.field).toEqual(ttt.genField())
+        expect(ttt.activePlayer).toBe("X")
+    })
 })
