@@ -1,25 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-
+import {TicTacToe} from "./tictactoe"
+const ttt= new TicTacToe
 const App: React.FC = () => {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    Active player {ttt.activePlayer}
+    <table className="pepe">
+      {ttt.field.map((row: any, rowIndex: number) => <tr>
+        {row.map((_cell: any, cellIndex: number) => <td onClick={() => {ttt.clickHandler(rowIndex, cellIndex)}}>
+          {ttt.field[rowIndex][cellIndex]}
+        </td>)}
+      </tr>)}
+    </table>
+    {ttt.checkWin(ttt.field)?<h1>Winner {ttt.activePlayer}</h1>:""}
+    {ttt.checkWin(ttt.field)?<button onClick={() => ttt.reset()}>Reset</button>:""}
+  </div>
   );
 }
 

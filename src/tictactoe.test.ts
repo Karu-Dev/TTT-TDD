@@ -97,4 +97,13 @@ describe("TicTacToe is a game", () => {
         expect(ttt.field).toEqual(ttt.genField())
         expect(ttt.activePlayer).toBe("X")
     })
+    it("should have an empty field by default",()=>{
+        const ttt = new TicTacToe
+        const field = [
+            ["", "", ""],
+            ["", "", ""],
+            ["", "", ""]
+        ]
+        expect(ttt.field).toEqual(field)
+    })
 })
