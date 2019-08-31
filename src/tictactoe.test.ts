@@ -10,6 +10,16 @@ describe("TicTacToe is a game", () => {
             ["", "", ""]
         ])
     })
+    it("should save the field as a variable",()=>{
+        const ttt = new TicTacToe
+        ttt.genField()
+        const field = ttt.field
+        expect(field).toEqual([
+            ["", "", ""],
+            ["", "", ""],
+            ["", "", ""]
+        ])
+    })
     it("should be able to handle a single click", () => {
         const ttt = new TicTacToe
         const field = ttt.genField()
