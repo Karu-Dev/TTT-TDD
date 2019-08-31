@@ -58,6 +58,7 @@ export class TicTacToe {
     reset(){
         this.field = this.genField()
         this.activePlayer = "X"
+        return this.field
     }
     setField(field:string[][]){
         this.field = field
