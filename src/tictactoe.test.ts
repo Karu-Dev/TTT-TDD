@@ -31,4 +31,13 @@ describe("TicTacToe is a game", () => {
             ["", "", ""]
         ])
     })
+    it("should be able to detect a draw",()=>{
+        const ttt = new TicTacToe
+        const field = [
+            ["X", "X", "O"],
+            ["O", "O", "X"],
+            ["X", "O", "X"]
+        ]
+        const isDraw = ttt.checkDraw(field)
+    })
 })
