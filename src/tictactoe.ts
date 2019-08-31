@@ -24,7 +24,7 @@ export class TicTacToe {
     }
     checkDraw(field:string[][]):boolean{
         if(field.some(row=>{
-            row.some(cell=>{
+            return row.some(cell=>{
                 return cell === ""
             })
         })){
