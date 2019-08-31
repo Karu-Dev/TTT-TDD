@@ -22,9 +22,10 @@ describe("TicTacToe is a game", () => {
     })
     it("should be able to handle a single click", () => {
         const ttt = new TicTacToe
-        const field = ttt.genField()
+        ttt.genField()
+        const field = ttt.field
         ttt.clickHandler(2,1)
-        expect(field).toBe([
+        expect(field).toEqual([
             ["", "", ""],
             ["", "", "X"],
             ["", "", ""]
