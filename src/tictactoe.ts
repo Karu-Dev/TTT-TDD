@@ -20,11 +20,13 @@ export class TicTacToe {
         if(!this.checkDraw(this.field)&&!this.checkWin(this.field)){
             if(this.field[y][x]===""){
                 this.field[y][x] = this.activePlayer
-                if (this.activePlayer === "X") {
-                    this.activePlayer = "O"
-                    return [...this.field]
+                if(!this.checkDraw(this.field)&&!this.checkWin(this.field)){
+                    if (this.activePlayer === "X") {
+                        this.activePlayer = "O"
+                        return [...this.field]
+                    }
+                    this.activePlayer = "X"
                 }
-                this.activePlayer = "X"
                 return [...this.field]
             }
         }
