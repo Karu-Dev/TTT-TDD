@@ -106,4 +106,52 @@ describe("TicTacToe is a game", () => {
         ]
         expect(ttt.field).toEqual(field)
     })
+    it("clickHandler should check if the game is over already or not (Draw scenario)",()=>{
+        const ttt = new TicTacToe
+        ttt.activePlayer="X"
+        ttt.field = [
+            ["X", "X", "O"],
+            ["O", "O", "X"],
+            ["X", "O", "X"]
+        ]
+        const field = [
+            ["X", "X", "O"],
+            ["O", "O", "X"],
+            ["X", "O", "X"]
+        ]
+        ttt.clickHandler(2,0)
+        expect(ttt.field).toEqual(field)
+    })
+    it("clickHandler should check if the game is over already or not (X win scenario)",()=>{
+        const ttt = new TicTacToe
+        ttt.activePlayer="O"
+        ttt.field = [
+            ["X", "O", "O"],
+            ["O", "X", "X"],
+            ["X", "O", "X"]
+        ]
+        const field = [
+            ["X", "X", "O"],
+            ["O", "O", "X"],
+            ["X", "O", "X"]
+        ]
+        ttt.clickHandler(1,1)
+        expect(ttt.field).toEqual(field)
+    })
+    it("clickHandler should check if the game is over already or not (O win scenario)",()=>{
+        const ttt = new TicTacToe
+        ttt.activePlayer="X"
+        ttt.field = [
+            ["X", "O", "O"],
+            ["O", "O", "X"],
+            ["X", "O", "X"]
+        ]
+        const field = [
+            ["X", "O", "O"],
+            ["O", "O", "X"],
+            ["X", "O", "X"]
+        ]
+        ttt.clickHandler(1,1)
+        expect(ttt.field).toEqual(field)
+    })
 })
