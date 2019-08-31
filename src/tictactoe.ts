@@ -22,4 +22,15 @@ export class TicTacToe {
         this.activePlayer = "X"
         return
     }
+    checkDraw(field:string[][]):boolean{
+        if(field.some(row=>{
+            row.some(cell=>{
+                return cell === ""
+            })
+        })){
+            return false
+        }else{
+            return true
+        }
+    }
 }
