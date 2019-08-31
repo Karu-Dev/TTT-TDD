@@ -154,4 +154,19 @@ describe("TicTacToe is a game", () => {
         ttt.clickHandler(1,1)
         expect(ttt.field).toEqual(field)
     })
+    it("clickHandler should return current field state",()=>{
+        const ttt = new TicTacToe
+        ttt.activePlayer="X"
+        ttt.field = [
+            ["", "", ""],
+            ["", "", ""],
+            ["", "", ""]
+        ]
+        const field = [
+            ["", "", ""],
+            ["", "X", ""],
+            ["", "", ""]
+        ]
+        expect(ttt.clickHandler(1,1)).toEqual(field)
+    })
 })
