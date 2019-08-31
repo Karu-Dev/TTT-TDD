@@ -1,6 +1,9 @@
 export class TicTacToe {
     activePlayer: string = "X"
     field: string[][] = [[]]
+    constructor(){
+        this.genField()
+    }
     genField() {
         this.field = [
             ["", "", ""],
@@ -14,13 +17,16 @@ export class TicTacToe {
         ]
     }
     clickHandler(x: number, y: number) {
-        this.field[y][x] = this.activePlayer
-        if (this.activePlayer === "X") {
-            this.activePlayer = "O"
+        if(!this.checkDraw(this.field)&&!this.checkWin(this.field)){
+
+            this.field[y][x] = this.activePlayer
+            if (this.activePlayer === "X") {
+                this.activePlayer = "O"
+                return
+            }
+            this.activePlayer = "X"
             return
         }
-        this.activePlayer = "X"
-        return
     }
     checkDraw(field: string[][]): boolean {
         if (field.some(row => {
